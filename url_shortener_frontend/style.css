@@ -5,64 +5,192 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    color: #222222;
-
     min-height: 100vh;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background-color: #f1e7ff;
+
+    font-family: Arial, sans-serif;
 }
+
+/* Main purple card */
 
 .container {
-    width: 600px;
-    text-align: center;
+    position: relative;
+
+    width: 970px;
+    min-height: 190px;
+
+    background-color: #dfc5fa;
+
+    border: 3px solid #000;
+    border-radius: 12px;
+
+    box-shadow: 10px 10px 0 #000;
+
+    padding: 40px;
 }
 
-h1 {
-    color: #6c3ce9;
-    font-size: 42px;
-    margin-bottom: 12px;
-}
+/* URL input + button */
 
-p {
-    color: #666666;
-    margin-bottom: 30px;
-}
-
-.input-section {
+.url-section {
     display: flex;
-    gap: 10px;
+    align-items: center;
+
+    gap: 16px;
+
+    width: 100%;
 }
+
+/* Input */
 
 input {
     flex: 1;
-    padding: 15px;
-    font-size: 16px;
 
-    border: 2px solid #dddddd;
-    border-radius: 8px;
+    height: 64px;
+
+    padding: 0 20px;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    color: #222;
+
+    background-color: #f7efff;
+
+    border: 3px solid #000;
+    border-radius: 9px;
+
     outline: none;
+
+    box-shadow: 5px 5px 0 #000;
+}
+
+input::placeholder {
+    color: #777;
 }
 
 input:focus {
-    border-color: #6c3ce9;
+    background-color: #fff;
+
+    border-color: #000;
 }
 
+/* Button */
+
 button {
-    padding: 15px 20px;
+    width: 155px;
+    height: 64px;
 
-    background-color: #6c3ce9;
-    color: white;
+    font-size: 19px;
+    font-weight: 500;
 
-    border: none;
-    border-radius: 8px;
+    color: #000;
+
+    background-color: #bd6ff0;
+
+    border: 3px solid #000;
+    border-radius: 9px;
 
     cursor: pointer;
+
+    box-shadow: 5px 5px 0 #000;
+
+    transition:
+        transform 0.1s ease,
+        box-shadow 0.1s ease;
 }
 
 button:hover {
-    background-color: #5929d4;
+    background-color: #ad5ce4;
+}
+
+button:active {
+    transform: translate(4px, 4px);
+    box-shadow: 1px 1px 0 #000;
+}
+
+/* Result */
+
+#result {
+    margin-top: 30px;
+
+    text-align: center;
+
+    font-size: 17px;
+}
+
+#result p {
+    margin-bottom: 8px;
+
+    color: #222;
+    font-weight: bold;
+}
+
+#result a {
+    color: #5e22c9;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    word-break: break-all;
+}
+
+#result a:hover {
+    text-decoration: underline;
+}
+
+/* ------------------------- */
+/* Decorative blue star      */
+/* ------------------------- */
+
+.star {
+    position: absolute;
+
+    left: -30px;
+    bottom: -22px;
+
+    width: 75px;
+    height: 75px;
+
+    background-color: #20c4f4;
+
+    border: 3px solid #000;
+
+    clip-path: polygon(
+        42% 0%,
+        52% 39%,
+        100% 35%,
+        60% 55%,
+        66% 100%,
+        43% 65%,
+        10% 82%,
+        28% 53%,
+        0% 30%,
+        38% 38%
+    );
+
+    transform: rotate(-10deg);
+}
+
+/* Small blue circle */
+
+.star-dot {
+    position: absolute;
+
+    left: -40px;
+    bottom: -45px;
+
+    width: 20px;
+    height: 20px;
+
+    background-color: #20c4f4;
+
+    border: 3px solid #000;
+
+    border-radius: 50%;
 }
