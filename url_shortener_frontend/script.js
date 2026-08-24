@@ -1,14 +1,20 @@
 const urlInput = document.getElementById("urlInput");
 const shortenButton = document.getElementById("shortenButton");
 const result = document.getElementById("result");
+
 shortenButton.addEventListener("click", shortenUrl);
+
 async function shortenUrl() {
-    const originalUrl = urlInput.value;
+
+    const originalUrl = urlInput.value.trim();
+
     if (originalUrl === "") {
         alert("Please enter a URL");
         return;
     }
+
     try {
+
         const response = await fetch("http://localhost:8080/api/v1/", {
             method: "POST",
 
@@ -21,10 +27,15 @@ async function shortenUrl() {
             })
         });
 
+        if (!response.ok) {
+            throw new Error("Failed to shorten URL");
+        }
+
         const data = await response.json();
 
         result.innerHTML = `
             <p>Shortened URL:</p>
+
             <a href="${data.shortenUrl}" target="_blank">
                 ${data.shortenUrl}
             </a>
