@@ -7,9 +7,9 @@ shortenButton.addEventListener("click", shortenUrl);
 async function shortenUrl() {
 
     const originalUrl = urlInput.value.trim();
-
-    if (originalUrl === "") {
-        alert("Please enter a URL");
+    if((!originalUrl.includes(".com")) && ((!originalUrl.includes("http://"))|| (!originalUrl.includes("https://")))){
+        console.log(originalUrl.includes("https://"));
+        alert("Please enter a valid url");
         return;
     }
 
